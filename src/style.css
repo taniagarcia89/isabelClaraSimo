@@ -344,7 +344,7 @@ span {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     display: flex;
-    height: 350px;
+    height: auto;
 }
 
 .slide figure img {
