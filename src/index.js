@@ -33,6 +33,7 @@ window.addEventListener("load", () => {
     }
 
     for (element of saved) {
+        element = element.replace(/-/g, ' ');
         llista.innerHTML += '<li>' + element + '</li>';
     }
 });
@@ -67,6 +68,8 @@ Array.from(favButons).forEach(favButon => {
 
             for (element of llistaFav) {
 
+                element = element.replace(/-/g, ' ');
+
                 llista.innerHTML += '<li>' + element + '</li>';
             }
 
@@ -87,6 +90,8 @@ Array.from(favButons).forEach(favButon => {
                 }
 
                 for (element of llistaFav) {
+
+                    element = element.replace(/-/g, ' ');
                     llista.innerHTML += '<li>' + element + '</li>';
                 }
             } else {
@@ -102,6 +107,8 @@ Array.from(favButons).forEach(favButon => {
                 }
 
                 for (element of llistaFav) {
+
+                    element = element.replace(/-/g, ' ');
                     llista.innerHTML += '<li>' + element + '</li>';
                 }
             }

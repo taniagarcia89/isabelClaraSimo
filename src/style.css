@@ -1,25 +1,8 @@
-body{
-    color: #1f1f1f;
-    background: linear-gradient(90deg,rgba(131,189,10,1) 0%, rgba(150,207,1,1) 25%, rgba(241,255,0,1) 100%);
-    margin: 0px;
-}
 
 /* portada */
 
-#portada{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 350px auto auto 100px;
-    height: 100vh;
-    width: 100%;
-    grid-template-areas: "header"
-                         "nav"
-                         "main"
-                         "footer";
-}
-
-#portada > main{
-    grid-area: main;
+#portada {
+    grid-area: portada;
     padding: 10px 20px;
 }
 
@@ -34,25 +17,13 @@ body{
 
 /* novel */
 
-#novel > main{
-    grid-area: main;
+#novel {
+    grid-area: novel;
     padding: 10px 20px;
 }
 
-#novel{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 350px auto auto 100px;
-    height: 100vh;
-    width: 100%;
-    grid-template-areas: "header"
-                         "nav"
-                         "main"
-                         "footer";
-}
-
-#novel > main{
-    grid-area: main;
+#novel {
+    grid-area: novel;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
@@ -136,23 +107,21 @@ body{
       cursor: pointer;
   }
 
+  #description{
+    grid-area: description;
+}
+
+#fav li{
+    font-size: 18px;
+}
+
 /* detall */
 
 #video figcaption{
     font-family: 'Crimson Text', serif;
     padding: 3px;
-}
-
-#detallJulia, #detallTzoe{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 350px auto auto 100px;
-    height: 100vh;
-    width: 100%;
-    grid-template-areas: "header"
-                         "nav"
-                         "main"
-                         "footer";
+    text-align: center;
+    font-size: 14px;
 }
 
 #detallJulia, #detallTzoe{
@@ -162,19 +131,29 @@ body{
     text-align: justify;
 }
 
-#detallJulia > main, #detallTzoe > main{
-    grid-area: main;
+#detallJulia { 
+    grid-area: detallJulia;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:    "descriptionDetall"
+                            "video";
+    padding: 10px 20px;
+}
+
+#detallTzoe{
+    grid-area: detallTzoe;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:    "descriptionDetall"
+                            "article";
     padding: 10px 20px;
 }
 
 #video figure {
     width: 75%;
     margin: 30px auto;
-}
-
-#video figcaption {
-    text-align: center;
-    font-size: 0.8rem;
 }
 
 #video .video-fluid {
@@ -201,24 +180,6 @@ body{
     padding-top: 56.25%;
 }
 
-#detallJulia main{
-    grid-area: main;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:    "descriptionDetall"
-                            "video";
-}
-
-#detallTzoe main{
-    grid-area: main;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:    "descriptionDetall"
-                            "article";
-}
-
 #article h3{
     display: inline;
     padding: 10px;
@@ -233,18 +194,6 @@ body{
     font-weight: 600;
     color: blue;
 }
-/* comú */
-
-header{
-    grid-area: header;
-    background-position: center;
-    background-size: cover;
-    background-image: url('assets/images/headerM.png');
-}
-
-#description{
-    grid-area: description;
-}
 
 #descriptionDetall{
     grid-area: descriptionDetall;
@@ -258,6 +207,30 @@ header{
     grid-area: article;
 }
 
+/* comú */
+
+body{
+    color: #1f1f1f;
+    background: linear-gradient(90deg,rgba(131,189,10,1) 0%, rgba(150,207,1,1) 25%, rgba(241,255,0,1) 100%);
+    margin: 0px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 350px auto auto 100px;
+    height: 100vh;
+    width: 100%;
+    grid-template-areas: "header"
+                         "nav"
+                         "main"
+                         "footer";
+}
+
+header{
+    grid-area: header;
+    background-position: center;
+    background-size: cover;
+    background-image: url('assets/images/headerM.png');
+}
+
 nav{
     grid-area: nav;
 }
@@ -269,8 +242,10 @@ footer{
 
 footer img{
     display: block;
-margin-left: auto;
-margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 66px;
+    width: 142px;
 }
 
 span {
@@ -332,7 +307,6 @@ span {
 
 .wrapper {
     overflow: hidden;
-    
     display: grid;
     grid-template-rows: 1fr;
     grid-gap: 10px;
@@ -366,8 +340,8 @@ font-weight: 600;
 }
 
 
-@media (min-width: 768px) {
-    #portada > header,  #novel > header, #detallJulia > header, #detallTzoe > header  {
+@media (min-width: 550px) {
+     header{
         background-image: url("assets/images/headerPC.png");
     }
 
@@ -382,13 +356,29 @@ font-weight: 600;
     }
 
     #cards{
-        grid-template-columns: repeat(auto auto);
+        grid-template-columns: auto auto;
         grid-template-areas: "card card";
      
     }
+    .slide a{
+        font-size: 20px;
+    }
+    
+    #video figcaption{
+        font-size: 18px;
+    }
+
+    #fav li{
+        font-size: 20px;
+    }
+
+    footer img{
+        height: 80px;
+        width: 160px;
+    }
 }
 @media (min-width: 1200px) {
-    #portada > header, #novel > header, #detallJulia > header, #detallTzoe > header  {
+   header{
         background-image: url("assets/images/headerPC.png");
     }
     #portada, #novel, #detallJulia, #detallTzoe {
@@ -418,8 +408,29 @@ font-weight: 600;
       } 
 
       #cards{
-        grid-template-columns: repeat(auto auto auto);
+        grid-template-columns: auto auto auto;
         grid-template-areas: "card card card";
+    }
+
+    .slide a{
+        font-size: 20px;
+    }
+
+    .card figure{
+        max-height: 300px;
+    }
+
+    #video figcaption{
+        font-size: 20px;
+    }
+
+    #fav li{
+        font-size: 22px;
+    }
+
+    footer img{
+        height: 96px;
+        width: 190px;
     }
     
 }
