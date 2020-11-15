@@ -37,6 +37,7 @@ window.addEventListener("load", () => {
         llista.innerHTML += '<li>' + element + '</li>';
     }
 });
+
 /* Favorite */
 
 let favButons = document.getElementsByClassName("btnFavorite");
