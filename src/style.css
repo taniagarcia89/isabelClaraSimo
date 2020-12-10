@@ -117,6 +117,13 @@
 }
 
 /* detall */
+picture img{
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+  
+
 
 #video figcaption{
     font-family: 'Crimson Text', serif;
@@ -230,12 +237,64 @@ body{
                          "footer";
 }
 
+main img{
+    /* animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1; */
+  animation: bounceIn 2s;
+}
+
+
+
+/* @keyframes slidein {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+    
+    to {
+     margin-left:0%;
+     width:100%;
+   }
+  } */
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
 header{
     grid-area: header;
-    background-position: center;
+    background-color:  black;
+    /* background-position: center;
     background-size: cover;
-    background-image: url('assets/images/headerM.png');
+    background-image: url('./assets/images/fons.jpg'); */
+   
 }
+
+header img{
+    width: 172px;
+    height: 196px;
+}
+
+header{
+    text-align: center;
+    padding: 20px;
+}
+
+header h1{
+    color: white;
+}
+
 
 nav{
     grid-area: nav;
@@ -246,12 +305,25 @@ footer{
     grid-area: footer;
 }
 
+footer h1{
+    text-align: center;
+}
+
 footer img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 66px;
-    width: 142px;
+}
+
+footer #imgClip img{
+    height: 150px;
+    width:300px;           
+}
+
+.clip-polygon{
+
+    clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
+
 }
 
 span {
@@ -263,7 +335,7 @@ span {
     background-color: #000;
     overflow: hidden;
     border-style: solid;
-    border-color:  black;
+    border-color: grey;
     border-width: 3px;
     font-family: 'Crimson Text', serif;
     font-weight: 600;
@@ -347,8 +419,8 @@ font-weight: 600;
 
 
 @media (min-width: 550px) {
-     header{
-        background-image: url("assets/images/headerPC.png");
+     header h1{
+        font-size: 42px;
     }
 
     #portada, #novel, #detallJulia, #detallTzoe {
@@ -378,15 +450,44 @@ font-weight: 600;
         font-size: 20px;
     }
 
-    footer img{
-        height: 80px;
-        width: 160px;
+    footer h1{
+        font-size: 36px;
+    }
+
+    footer #imgClip img{
+        height: 250px;
+        width:500px;           
+    }
+    
+    .clip-polygon{
+    
+        clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
+    
     }
 }
 @media (min-width: 1200px) {
    header{
-        background-image: url("assets/images/headerPC.png");
+        padding: 4.25% 0;
+
     }
+
+    header img{
+        width: 206px;
+        height: 222px;  
+        float: left; 
+        padding-left: 350px;
+    }  
+
+
+    header h1{
+        font-size: 56px;
+        color: white;
+        float: left;
+        padding-top: 35px;
+        padding-left: 50px;
+    }  
+   
+
     #portada, #novel, #detallJulia, #detallTzoe {
         font-family: 'Crimson Text', serif;
         font-weight: 400;
@@ -434,9 +535,18 @@ font-weight: 600;
         font-size: 22px;
     }
 
-    footer img{
-        height: 96px;
-        width: 190px;
+    footer h1{
+        font-size: 48px;
     }
     
+    footer #imgClip img{
+        height: 350px;
+        width: 900px;           
+    }
+
+    .clip-polygon{
+
+        clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
+
+    }
 }
