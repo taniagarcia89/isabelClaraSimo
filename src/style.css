@@ -123,7 +123,11 @@ picture img{
     margin: auto;
   }
   
-
+img.entrevista {
+    margin: auto;
+    padding: 20px;
+    display: block;
+}
 
 #video figcaption{
     font-family: 'Crimson Text', serif;
@@ -548,5 +552,11 @@ font-weight: 600;
 
         clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
 
+    }
+
+    img.entrevista {
+        float:left;
+        padding: 0 20px;
+        margin-right: 20px;
     }
 }
