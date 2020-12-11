@@ -319,7 +319,7 @@ footer img{
     margin-right: auto;
 }
 
-footer #imgClip img{
+/* footer #imgClip img{
     height: 150px;
     width:300px;           
 }
@@ -328,6 +328,12 @@ footer #imgClip img{
 
     clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
 
+} */
+
+.clip-circle{
+    height: 390.2px;
+    width: 262.2px;
+    clip-path: circle(125px at 135px 250px);
 }
 
 span {
@@ -458,7 +464,7 @@ font-weight: 600;
         font-size: 36px;
     }
 
-    footer #imgClip img{
+    /* footer #imgClip img{
         height: 250px;
         width:500px;           
     }
@@ -467,7 +473,7 @@ font-weight: 600;
     
         clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
     
-    }
+    } */
 }
 @media (min-width: 1200px) {
    header{
@@ -543,7 +549,7 @@ font-weight: 600;
         font-size: 48px;
     }
     
-    footer #imgClip img{
+   /*  footer #imgClip img{
         height: 350px;
         width: 900px;           
     }
@@ -552,7 +558,7 @@ font-weight: 600;
 
         clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
 
-    }
+    } */
 
     img.entrevista {
         float:left;
