@@ -248,8 +248,6 @@ main img{
   animation: bounceIn 2s;
 }
 
-
-
 /* @keyframes slidein {
     from {
       margin-left:100%;
@@ -309,31 +307,30 @@ footer{
     grid-area: footer;
 }
 
-footer h1{
-    text-align: center;
-}
-
 footer img{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* footer #imgClip img{
-    height: 150px;
-    width:300px;           
+footer img{
+    max-width: 100%;
+    height: auto;
 }
 
-.clip-polygon{
+#svg-clipped-circle{
+    clip-path: url(#svgCirclePath);
+    -webkit-clip-path: url(#svgCirclePath);
+    width: 225px;
+    height: 250px;
+} 
 
-    clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
-
-} */
-
-.clip-circle{
-    height: 390.2px;
-    width: 262.2px;
-    clip-path: circle(125px at 135px 250px);
+#svg-clipped-text{
+   
+    clip-path: url(#svgTextPath);
+    -webkit-clip-path: url(#svgTextPath);
+    width: 350px;
+    height: 150px;
 }
 
 span {
@@ -460,20 +457,6 @@ font-weight: 600;
         font-size: 20px;
     }
 
-    footer h1{
-        font-size: 36px;
-    }
-
-    /* footer #imgClip img{
-        height: 250px;
-        width:500px;           
-    }
-    
-    .clip-polygon{
-    
-        clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
-    
-    } */
 }
 @media (min-width: 1200px) {
    header{
@@ -544,24 +527,22 @@ font-weight: 600;
     #fav li{
         font-size: 22px;
     }
-
-    footer h1{
-        font-size: 48px;
-    }
     
-   /*  footer #imgClip img{
-        height: 350px;
-        width: 900px;           
+    #svg-clipped-circle{
+        height: 440.2px;
+        width: 312.2px;
+        -webkit-clip-path: url(#svgCirclePathPC);
+        clip-path: url(#svgCirclePathPC);
+    } 
+
+    #svg-clipped-text{
+        
+        clip-path: url(#svgTextPathPC);
+        -webkit-clip-path: url(#svgTextPathPC);
+        height: 200px;
+        width: 900px;
     }
-
-    .clip-polygon{
-
-        clip-path: polygon(0 35%, 5% 35%, 5% 25%, 95% 25%, 95% 35%, 100% 35%, 100% 90%, 95% 90%, 95% 100%, 5% 100%, 5% 90%, 0 90%);
-
-    } */
-
-    
-
+   
     img.entrevista {
         float:left;
         padding: 0 20px;
