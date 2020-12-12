@@ -292,9 +292,9 @@ main img{
 header{
     grid-area: header;
     background-color:  black;
-    /* background-position: center;
+    background-position: center;
     background-size: cover;
-    background-image: url('./assets/images/fons.jpg'); */
+    background-image: url('/fonsM.ec954a6e.jpg');
    
 }
 
@@ -446,6 +446,10 @@ font-weight: 600;
         font-size: 42px;
     }
 
+    header {
+        background-image: url('/fonsT.af01cf4c.jpg');
+    }
+
     #portada, #novel, #detallJulia, #detallTzoe {
         font-family: 'Crimson Text', serif;
         font-weight: 400;
@@ -478,6 +482,10 @@ font-weight: 600;
    header{
         padding: 4.25% 0;
 
+    }
+
+    header {
+        background-image: url('/fonsPC.25d7cc04.jpg');
     }
 
     header img{
