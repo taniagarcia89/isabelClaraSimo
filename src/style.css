@@ -44,7 +44,7 @@
 }
 
 .card figure{
-    max-height: 200px;
+    max-height: 250px;
   overflow: hidden;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
@@ -124,8 +124,14 @@ picture img{
   }
   
 img.entrevista {
+    max-width: 100%;
     margin: auto;
-    padding: 20px;
+    display: block;
+}
+
+img.teler{
+    max-width: 100%;
+    margin: auto;
     display: block;
 }
 
