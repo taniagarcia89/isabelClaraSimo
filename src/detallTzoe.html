@@ -8,7 +8,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script defer src="https://kit.fontawesome.com/36ce8dd706.js" crossorigin="anonymous"></script>
     <link rel="Shortcut Icon" href="assets/images/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <style type="text/css">
+        img.entrevista {
+            max-width: 100%;
+            margin: auto;
+            display: block;
+            animation: move 8s;
+            animation-iteration-count: 2;
+        }
+
+        #detallJulia,
+        #detallTzoe {
+            font-family: 'Crimson Text', serif;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        #detallTzoe {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "descriptionDetall"
+                "article"
+                "slide";
+            padding: 10px 20px;
+        }
+
+        #article h3 {
+            display: inline;
+            padding: 10px;
+        }
+
+        #article li {
+            font-style: italic;
+        }
+
+        #article li a {
+            text-decoration: none;
+            font-weight: 600;
+            color: blue;
+        }
+
+        #descriptionDetall {
+            grid-area: descriptionDetall;
+        }
+
+        #article {
+            grid-area: article;
+        }
+
+        #slideG {
+            grid-area: slide;
+        }
+
+        .destacat {
+            max-width: 100%;
+            width: 75%;
+            /* padding: 50px; */
+            display: block;
+            margin: auto;
+            border: black 4px solid;
+        }
+
+        /* comú */
+
+        .logo {
+            animation: circle 4s;
+            clip-path: circle(75%);
+        }
+
+        body {
+            color: #1f1f1f;
+            background: linear-gradient(90deg, rgba(131, 189, 10, 1) 0%, rgba(150, 207, 1, 1) 25%, rgba(241, 255, 0, 1) 100%);
+            margin: 0px;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 350px auto auto 100px;
+            height: 100vh;
+            width: 100%;
+            grid-template-areas: "header"
+                "nav"
+                "main"
+                "footer";
+        }
+
+        header {
+            grid-area: header;
+            background-color: black;
+            background-position: center;
+            background-size: cover;
+            background-image: url('./assets/images/fonsM.jpg');
+
+        }
+
+        header img {
+            width: 172px;
+            height: 196px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+
+        nav {
+            grid-area: nav;
+        }
+
+        footer {
+            padding: 10px;
+            grid-area: footer;
+        }
+
+        footer img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #svg-clipped-circle {
+            clip-path: url(#svgCirclePath);
+            -webkit-clip-path: url(#svgCirclePath);
+            width: 225px;
+            height: 250px;
+        }
+
+        #svg-clipped-text {
+
+            clip-path: url(#svgTextPath);
+            -webkit-clip-path: url(#svgTextPath);
+            width: 350px;
+            height: 150px;
+        }
+
+        .menu {
+            background-color: #000;
+            overflow: hidden;
+            border-style: solid;
+            border-color: grey;
+            border-width: 3px;
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+        }
+
+        .menu a {
+            float: left;
+            display: block;
+            color: rgba(150, 207, 1, 1);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .menu a:not(:first-child) {
+            display: none;
+        }
+
+        .menu a.icon {
+            float: right;
+            display: block;
+        }
+
+        .wrapper {
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-gap: 10px;
+        }
+
+        .slide {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            display: flex;
+            height: auto;
+        }
+
+        .slide figure img {
+            scroll-snap-align: start;
+            margin: auto;
+            width: 150px;
+            height: 225px;
+        }
+
+        .slide a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+
+        .slide figcaption {
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        @media (min-width: 550px) {
+            header h1 {
+                font-size: 42px;
+            }
+
+            header {
+                background-image: url('./assets/images/fonsT.jpg');
+            }
+
+            #portada,
+            #novel,
+            #detallJulia,
+            #detallTzoe {
+                font-family: 'Crimson Text', serif;
+                font-weight: 400;
+                font-size: 22px;
+                text-align: justify;
+            }
+
+            main {
+                margin: 10px 75px;
+            }
+
+            .slide a {
+                font-size: 20px;
+            }
+
+            .destacat {
+                width: 35%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            header {
+                padding: 4.25% 0;
+
+            }
+
+            header {
+                background-image: url('./assets/images/fonsPC.jpg');
+            }
+
+            header img {
+                float: left;
+                margin-left: 350px;
+            }
+
+
+            header h1 {
+                font-size: 56px;
+                color: white;
+                float: left;
+                padding-top: 35px;
+                padding-left: 50px;
+            }
+
+
+            #portada,
+            #novel,
+            #detallJulia,
+            #detallTzoe {
+                font-family: 'Crimson Text', serif;
+                font-weight: 400;
+                font-size: 24px;
+                text-align: justify;
+            }
+
+            main {
+                margin: 10px 200px;
+            }
+
+            .menu .icon {
+                display: none;
+            }
+
+            .menu a:not(:first-child) {
+                display: inline;
+            }
+
+            .menu a.icon {
+                display: none;
+            }
+
+            .slide a {
+                font-size: 20px;
+            }
+
+            #svg-clipped-circle {
+                height: 440.2px;
+                width: 312.2px;
+                -webkit-clip-path: url(#svgCirclePathPC);
+                clip-path: url(#svgCirclePathPC);
+            }
+
+            #svg-clipped-text {
+
+                clip-path: url(#svgTextPathPC);
+                -webkit-clip-path: url(#svgTextPathPC);
+                height: 200px;
+                width: 900px;
+            }
+
+            img.entrevista {
+                float: left;
+                padding: 0 20px;
+                margin-right: 20px;
+            }
+
+            .destacat {
+                width: 25%;
+            }
+
+        }
+
+    </style>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="style.css"><noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
     </head>
 
     <body>
