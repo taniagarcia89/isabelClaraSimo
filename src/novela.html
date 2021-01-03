@@ -6,9 +6,327 @@
     <meta name="keywords"
         content="obres literàries, isabel-clara simó, literatura catalana, literatura, novel·la, narrativa, escriptora, narratica infantil, narrativa juvenil" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://kit.fontawesome.com/36ce8dd706.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/36ce8dd706.js" crossorigin="anonymous"></script>
     <link rel="Shortcut Icon" href="assets/images/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <style type="text/css">
+        #novel {
+            grid-area: main;
+            padding: 10px 20px;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "description"
+                "cards"
+                "favorites";
+        }
+
+        #cards {
+            grid-area: cards;
+            display: grid;
+            grid-gap: 10px;
+            padding: 10px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        .card {
+            border: 1px solid #E2E2E2;
+            border-radius: .5rem;
+            background-color: black;
+        }
+
+        .card figure {
+            max-height: 250px;
+            overflow: hidden;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+            position: relative;
+        }
+
+        .card figure img {
+            width: 100%;
+            border: 2px solid;
+            border-color: chartreuse;
+        }
+
+        .card figure figcaption {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            width: 100%;
+        }
+
+        .card figure figcaption h3 {
+            color: white;
+            padding: .75rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: 0 40px;
+            color: #666666;
+            font-weight: 600;
+        }
+
+        .card a {
+            padding: 10px 30px;
+            margin: 10px 40px;
+            background-color: rgba(128, 255, 0, 0.863);
+            text-decoration: none;
+            font-weight: 600;
+            color: black;
+            border-radius: .25rem;
+            text-align: center;
+            display: inline-block;
+        }
+
+        #cards i {
+            font-size: 2em;
+            color: wheat;
+        }
+
+        #cards .btnFavorite {
+            background-color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        #description {
+            grid-area: description;
+        }
+
+        #favorites {
+            grid-area: favorites;
+        }
+
+        .logo {
+            animation: circle 4s;
+            clip-path: circle(75%);
+        }
+
+        body {
+            color: #1f1f1f;
+            background: linear-gradient(90deg, rgba(131, 189, 10, 1) 0%, rgba(150, 207, 1, 1) 25%, rgba(241, 255, 0, 1) 100%);
+            margin: 0px;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 350px auto auto 100px;
+            height: 100vh;
+            width: 100%;
+            grid-template-areas: "header"
+                "nav"
+                "main"
+                "footer";
+        }
+
+        header {
+            grid-area: header;
+            background-color: black;
+            background-position: center;
+            background-size: cover;
+            background-image: url('./assets/images/fonsM.jpg');
+
+        }
+
+        header img {
+            width: 172px;
+            height: 196px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+
+        nav {
+            grid-area: nav;
+        }
+
+        footer {
+            padding: 10px;
+            grid-area: footer;
+        }
+
+        footer img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #svg-clipped-circle {
+            clip-path: url(#svgCirclePath);
+            -webkit-clip-path: url(#svgCirclePath);
+            width: 225px;
+            height: 250px;
+        }
+
+        #svg-clipped-text {
+
+            clip-path: url(#svgTextPath);
+            -webkit-clip-path: url(#svgTextPath);
+            width: 350px;
+            height: 150px;
+        }
+
+        .menu {
+            background-color: #000;
+            overflow: hidden;
+            border-style: solid;
+            border-color: grey;
+            border-width: 3px;
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+        }
+
+        .menu a {
+            float: left;
+            display: block;
+            color: rgba(150, 207, 1, 1);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .menu a.active {
+            background-color: rgba(150, 207, 1, 1);
+            color: black;
+        }
+
+        .menu a:not(:first-child) {
+            display: none;
+        }
+
+        .menu a.icon {
+            float: right;
+            display: block;
+        }
+
+        @media (min-width: 550px) {
+
+            header h1 {
+                font-size: 42px;
+            }
+
+            header {
+                background-image: url('./assets/images/fonsT.jpg');
+            }
+
+            #portada,
+            #novel,
+            #detallJulia,
+            #detallTzoe {
+                font-family: 'Crimson Text', serif;
+                font-weight: 400;
+                font-size: 22px;
+                text-align: justify;
+            }
+
+            main {
+                margin: 10px 75px;
+            }
+
+            #cards {
+                grid-template-columns: auto auto;
+                grid-template-areas: "card card";
+
+            }
+
+        }
+
+        @media (min-width: 1200px) {
+            header {
+                padding: 4.25% 0;
+
+            }
+
+            header {
+                background-image: url('./assets/images/fonsPC.jpg');
+            }
+
+            header img {
+                float: left;
+                margin-left: 350px;
+            }
+
+
+            header h1 {
+                font-size: 56px;
+                color: white;
+                float: left;
+                padding-top: 35px;
+                padding-left: 50px;
+            }
+
+
+            #portada,
+            #novel,
+            #detallJulia,
+            #detallTzoe {
+                font-family: 'Crimson Text', serif;
+                font-weight: 400;
+                font-size: 24px;
+                text-align: justify;
+            }
+
+            main {
+                margin: 10px 200px;
+            }
+
+            .menu .icon {
+                display: none;
+            }
+
+            .menu a:not(:first-child) {
+                display: inline;
+            }
+
+            .menu a.icon {
+                display: none;
+            }
+
+            #cards {
+                grid-template-columns: auto auto auto;
+                grid-template-areas: "card card card";
+            }
+
+            .card figure {
+                max-height: 300px;
+            }
+
+            #svg-clipped-circle {
+                height: 440.2px;
+                width: 312.2px;
+                -webkit-clip-path: url(#svgCirclePathPC);
+                clip-path: url(#svgCirclePathPC);
+            }
+
+            #svg-clipped-text {
+
+                clip-path: url(#svgTextPathPC);
+                -webkit-clip-path: url(#svgTextPathPC);
+                height: 200px;
+                width: 900px;
+            }
+
+        }
+
+    </style>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="style.css"><noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
     </head>
 
     <body>
