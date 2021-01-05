@@ -12,21 +12,24 @@ window.addEventListener("load", () => {
 window.addEventListener("load", () => {
     const saved = JSON.parse(localStorage.getItem('favorites'));
 
-    for (let i = 0; i < saved.length; i++) {
-        let divCard = document.getElementById(saved[i]);
+    if (saved != null) {
+        for (let i = 0; i < saved.length; i++) {
+            let divCard = document.getElementById(saved[i]);
 
-        if (divCard != null) {
+            if (divCard != null) {
 
 
-            let icon = divCard.getElementsByTagName('i');
+                let icon = divCard.getElementsByTagName('i');
 
-            for (element of icon) {
+                for (element of icon) {
 
-                element.className = 'fas fa-heart';
+                    element.className = 'fas fa-heart';
+                }
             }
-        }
 
+        }
     }
+
     let llista = document.getElementById('fav');
     while (llista.hasChildNodes()) {
         llista.removeChild(llista.firstChild);
