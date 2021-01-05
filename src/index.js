@@ -28,16 +28,18 @@ window.addEventListener("load", () => {
             }
 
         }
-    }
 
-    let llista = document.getElementById('fav');
-    while (llista.hasChildNodes()) {
-        llista.removeChild(llista.firstChild);
-    }
 
-    for (element of saved) {
-        element = element.replace(/-/g, ' ');
-        llista.innerHTML += '<li>' + element + '</li>';
+        let llista = document.getElementById('fav');
+        while (llista.hasChildNodes()) {
+            llista.removeChild(llista.firstChild);
+        }
+
+        for (element of saved) {
+            element = element.replace(/-/g, ' ');
+            llista.innerHTML += '<li>' + element + '</li>';
+        }
+
     }
 });
 
